@@ -2,25 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task-11</title>
+    <title>goit-js-hw-12</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section>
-      <form class="form" name="search_form" autocomplete="off">
-        <input type="text" name="search_input" placeholder="Search images..." />
-        <button type="submit">Search</button>
+    <section class="section-form">
+      <form class="form js-form">
+        <input
+          class="input js-input"
+          name="query"
+          type="text"
+          placeholder="Search images..."
+        />
+        <button class="btn js-btn-search" type="submit">Search</button>
       </form>
-      <ul class="gallery"></ul>
-      <div class="spinner is-hidden"></div>
     </section>
-
+    <section class="section-gallery">
+      <ul class="gallery-list js-gallery"></ul>
+      <button class="btn js-btn-load is-hidden">Load more</button>
+      <p class="loader is-hidden"></p>
+    </section>
     <script type="module" src="./main.js"></script>
   </body>
 </html>

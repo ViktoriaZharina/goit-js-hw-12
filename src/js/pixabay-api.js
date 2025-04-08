@@ -1,19 +1,26 @@
-export function fetchImages(searchData) {
-    const searchParams = new URLSearchParams({
-        key: '44728966-7765244b057c0982fa05c31d9',
-        q: searchData,
-        image_type: "photo",
-        orientation: "horizontal",
-        safesearch: "true"
-    });
+import axios from 'axios';
 
-    const url = `https://pixabay.com/api/?${searchParams}`;
+axios.defaults.baseURL = 'https://pixabay.com/api/';
 
-    return fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(response.status);
-            }
-            return response.json();
-        });
+export const userParams = {
+  query: '',
+  page: 1,
+  perPage: 15,
+  maxPAge: '',
+};
+
+export function fetchImages() {
+  const params = {
+    params: {
+      key: '44728966-7765244b057c0982fa05c31d9',
+      image_type: 'photo',
+      orientation: 'horizontal',
+      safesearch: true,
+      q: userParams.query,
+      page: userParams.page,
+      per_page: userParams.perPage,
+    },
+  };
+
+  return axios.get('', params);
 }
